@@ -1,0 +1,81 @@
+Browser
+   │
+   │ GET /api/users/10
+   ▼
+Web Server
+   │
+   ▼
+public/index.php
+   │
+   ▼
+Laravel Application Bootstrap
+   │
+   ▼
+HTTP Kernel / Middleware Pipeline
+   │
+   ▼
+Router
+   │
+   ▼
+Route Matching
+   │
+   ▼
+Controller Resolution
+   │
+   ▼
+Service Container
+   │
+   ├── UserController
+   │       │
+   │       ▼
+   │   UserService
+   │       │
+   │       ▼
+   │   UserRepository
+   │       │
+   │       ▼
+   │      Model
+   │       │
+   │       ▼
+   │     Database
+   │
+   ▼
+Controller Response
+   │
+   ▼
+Middleware
+   │
+   ▼
+Laravel Response
+   │
+   ▼
+Web Server
+   │
+   ▼
+Browser
+
+
+At the HTTP level, the request contains:
+
+Method:
+GET
+
+URL:
+/api/users/10
+
+Headers:
+Authorization: Bearer ...
+
+Accept:
+application/json
+
+
+Then:
+
+Browser
+   ↓
+Nginx / Apache
+   ↓
+PHP
+   ↓
+Laravel
